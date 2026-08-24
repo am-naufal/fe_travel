@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/*
+ * Design tokens — sourced from spec/frontend/DESIGN_TOKENS.md
+ * Do not add ad-hoc colors/fonts here; only what the spec defines.
+ */
+@theme {
+    --color-primary: #6d28d9;
+    --color-accent: #f59e0b;
+    --color-background: #f8fafc;
+
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    body {
+        @apply bg-background text-slate-700 antialiased;
+    }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-up {
+        animation: none;
+    }
+}

@@ -1,0 +1,5 @@
+# RESPONSIVE SPEC
+
+Mobile:0-767
+Tablet:768-1023
+Desktop:1024+
